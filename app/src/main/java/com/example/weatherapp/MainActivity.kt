@@ -10,6 +10,8 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.core.app.ActivityCompat
+import com.example.library.SecondActivity
+import com.example.library.Utils
 import com.example.weatherapp.databinding.ActivityMainBinding
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.messaging.FirebaseMessaging
@@ -35,7 +37,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        val utils = Utils()
 
+        utils.showIt()
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             ActivityCompat.requestPermissions(
                 this, arrayOf(Manifest.permission.POST_NOTIFICATIONS), 0
